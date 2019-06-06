@@ -1,4 +1,4 @@
-package com.shaochen.entity.mapper.httplog;
+package com.shaochen.mapper.httplog;
 
 import com.shaochen.entity.vo.httplog.HttpLogVO;
 import org.apache.ibatis.annotations.Select;

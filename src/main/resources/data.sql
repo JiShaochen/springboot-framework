@@ -1,1 +1,1 @@
-INSERT INTO `demo`.`user`(`id`, `name`, `sex`, `age`, `address`, `valid`) VALUES (7, '李四', '女', 18, '中国', 'VALID');
+/*INSERT INTO `demo`.`user`(`id`, `name`, `sex`, `age`, `address`, `valid`) VALUES (7, '李四', '女', 18, '中国', 'VALID');*/

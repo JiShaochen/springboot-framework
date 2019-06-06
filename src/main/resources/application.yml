@@ -57,7 +57,7 @@ mybatis:
     map-underscore-to-camel-case: true
 #配置swagger
 swagger:
-  basePackage: com.maxrocky.controller
+  basePackage: com.shaochen.controller
   description: 少臣的项目
   title: 少臣的项目
   version: V1.0
