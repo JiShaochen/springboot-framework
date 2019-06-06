@@ -1,0 +1,64 @@
+#=================================基础配置========================================================
+server:
+  port: 8015
+spring:
+  cloud:
+    client:
+      ipAddress: 127.0.0.1
+  application:
+    name: springboot
+#=================================数据库配置========================================================
+  datasource:
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+    initialization-mode: ALWAYS
+    schema: classpath:schema.sql
+    data: classpath:data.sql
+    minIdle: 5
+    validationQuery: select 'x'
+    initialSize: 5
+    maxWait: 60000
+    poolPreparedStatements: true
+    filters: stat,wall,slf4j
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/demo?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 123456
+    platform: mysql
+    maxPoolPreparedStatementPerConnectionSize: 20
+    testOnBorrow: false
+    testWhileIdle: true
+    minEvictableIdleTimeMillis: 30000
+    timeBetweenEvictionRunsMillis: 60000
+    testOnReturn: false
+    driver-class-name: com.mysql.jdbc.Driver
+    maxActive: 300
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+#=========================redis==============================================
+  redis:
+    database: 0
+    host: 47.107.22.43
+    port: 6379
+    password:
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1ms
+        max-idle: 8
+        min-idle: 0
+
+#=================================其他配置========================================================
+#解决mybaits传入空值问题
+mybatis:
+  configuration:
+    jdbc-type-for-null: NULL
+    map-underscore-to-camel-case: true
+#配置swagger
+swagger:
+  basePackage: com.maxrocky.controller
+  description: 少臣的项目
+  title: 少臣的项目
+  version: V1.0
+  enable: true
